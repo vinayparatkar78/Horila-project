@@ -1,4 +1,4 @@
-# ── STAGE 1: Build dependencies ───────────────────────────────────────────
+
 FROM python:3.10-slim-bullseye AS builder
 
 ENV PYTHONUNBUFFERED=1
@@ -15,7 +15,6 @@ RUN apt-get update \
     && apt-get purge -y --auto-remove gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# ── STAGE 2: Final image ───────────────────────────────────────────────────
 FROM python:3.10-slim-bullseye
 
 ENV PYTHONUNBUFFERED=1
